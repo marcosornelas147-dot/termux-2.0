@@ -1,0 +1,6 @@
+{
+  "name": "Termux 2.0",
+  "description": "Navegador web nativo com múltiplas abas independentes, integração com terminal Linux e servidores localhost, gerenciamento de memória e controles de segurança.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
