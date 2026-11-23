@@ -106,7 +106,7 @@ object LinuxCommandCatalog {
         LinuxCommandDoc("printf", "Texto & Pipes", "printf <formato> [args...]", "Formata e imprime texto com escapes.", "printf \"Porta: %s\\n\" 8080"),
         LinuxCommandDoc("grep", "Texto & Pipes", "grep [-i] [-n] [-v] [-c] [-r] <padrão> [arquivo]", "Filtra linhas que combinam com expressão/texto.", "cat index.html | grep -n api"),
         LinuxCommandDoc("sed", "Texto & Pipes", "sed 's/antigo/novo/g' [arquivo]", "Substitui texto em fluxo ou arquivo.", "cat app.js | sed 's/8080/3000/g'"),
-        LinuxCommandDoc("awk", "Texto & Pipes", "awk [-F sep] '{print $N}' [arquivo]", "Extrai colunas de texto delimitado.", "ls -l | awk '{print $5, $9}'"),
+        LinuxCommandDoc("awk", "Texto & Pipes", "awk [-F sep] '{print \$N}' [arquivo]", "Extrai colunas de texto delimitado.", "ls -l | awk '{print $5, $9}'"),
         LinuxCommandDoc("wc", "Texto & Pipes", "wc [-l] [-w] [-c] [arquivo]", "Conta linhas, palavras e bytes.", "cat index.html | wc -l"),
         LinuxCommandDoc("sort", "Texto & Pipes", "sort [-r] [-n] [-u] [arquivo]", "Ordena linhas alfabética ou numericamente.", "ls | sort -r"),
         LinuxCommandDoc("uniq", "Texto & Pipes", "uniq [-c] [arquivo]", "Remove ou conta linhas duplicadas adjacentes.", "sort log.txt | uniq -c"),

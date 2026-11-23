@@ -347,6 +347,8 @@ object LinuxSystemAndNetCommands {
         val tokens = Regex("\\d+(\\.\\d+)?|[+\\-*/%()]").findAll(expr).map { it.value }.toList()
         var pos = 0
 
+        lateinit var parseExpr: () -> Double
+
         fun parseFactor(): Double {
             val tok = tokens.getOrNull(pos) ?: throw IllegalArgumentException("fim inesperado")
             return when {
@@ -381,14 +383,14 @@ object LinuxSystemAndNetCommands {
             return v
         }
 
-        fun parseExpr(): Double {
+        parseExpr = {
             var v = parseTerm()
             while (pos < tokens.size && tokens[pos] in listOf("+", "-")) {
                 val op = tokens[pos++]
                 val r = parseTerm()
                 v = if (op == "+") v + r else v - r
             }
-            return v
+            v
         }
 
         return parseExpr()

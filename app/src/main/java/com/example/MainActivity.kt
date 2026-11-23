@@ -396,6 +396,8 @@ fun TermuxBrowserRoot(viewModel: TermuxBrowserViewModel) {
                                             promptPath = currentPromptPath,
                                             runningServers = runningServers,
                                             onExecuteCommand = { viewModel.runTerminalCommand(it) },
+                                            onAutocomplete = { viewModel.terminalProcessor.autocomplete(it) },
+                                            getHistory = { viewModel.terminalProcessor.getHistoryCommands() },
                                             onOpenUrlInBrowser = { url ->
                                                 viewModel.openUrlInNewOrCurrentTab(url, forceNewTab = true)
                                                 viewModel.setDestination(WorkspaceDestination.BROWSER)
